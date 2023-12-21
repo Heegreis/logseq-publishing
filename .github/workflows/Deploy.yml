@@ -38,7 +38,7 @@ jobs:
         run: |
           master_commit=$(git rev-parse HEAD)
           git checkout -b gh-pages
-          sed -i "s/<meta \/><\/head>/<meta commit="$master_commit" \/><meta \/><\/head>/" index.html
+          sed -i "s/<meta><\/meta>/<meta commit="$master_commit"><\/meta>/" index.html
           git add index.html
           git commit -m "add master commit to meta data"
           git push -f origin gh-pages
